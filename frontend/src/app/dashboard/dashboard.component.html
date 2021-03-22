@@ -1,0 +1,175 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+  
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" routerLink="/dashboard">
+        <div class="sidebar-brand-icon">
+          <i class="fas fa-paint-brush"></i>
+        </div>
+        <div class="sidebar-brand-text ml-3">WP LogAT</div>
+      </a>
+  
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+  
+      <li class="nav-item">
+        <a class="nav-link" style="text-align: center;">
+          <span>Sidebar</span></a>
+      </li>
+  
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+  
+      <!-- Nav Item -->
+      <li class="nav-item" [class.active]="_router.url.includes('userprof')" routerLinkActive="active">
+        <a class="nav-link" routerLink="/dashboard/fileupload">
+          <i class="fas fa-newspaper"></i>
+          <span>File Upload</span></a>
+      </li>
+  
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/dashboard/fileview">
+          <i class="fas fa-list-ul"></i>
+          <span> File View</span></a>
+      </li>
+  
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/dashboard/advanced">
+          <i class="fas fa-address-card"></i>
+          <span> Advanced</span></a>
+      </li>
+  
+      <!-- <li class="nav-item" routerLinkActive="active" (click)="hideBadge()">
+        <a class="nav-link" routerLink="/dashboard/notifications">
+          &nbsp;<i class="fas fa-bell"></i>
+          <span> Notification</span>
+          <span *ngIf="newNotiCount != 0" class="badge badge-danger ml-2"
+            style="font-size: 10px;">&nbsp;{{newNotiCount}}&nbsp;</span></a>
+      </li> -->
+  
+      <!-- Divider -->
+      <br>
+      <hr class="sidebar-divider">
+  
+    </ul>
+    <!-- End of Sidebar -->
+  
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+  
+      <!-- Main Content -->
+      <div id="content">
+  
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+  
+          <h2 class="h4 mb-0 text-gray-800" *ngIf="_router.url.includes('fileupload')">File Upload</h2>
+          <h2 class="h4 mb-0 text-gray-800" *ngIf="_router.url.includes('fileview')">File view</h2>
+          <h2 class="h4 mb-0 text-gray-800" *ngIf="_router.url.includes('advanced')">Advanced</h2>
+      
+  
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+  
+            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+            <li class="nav-item dropdown no-arrow d-sm-none">
+  
+            </li>
+  
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
+                <img class="img-profile rounded-circle" src="mmmmmmmmmmmmmmmmmmm">
+              </a>
+              <!-- Dropdown - User Information -->
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Profile
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Settings
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Activity Log
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+                </a>
+              </div>
+            </li>
+  
+          </ul>
+  
+        </nav>
+        <!-- End of Topbar -->
+  
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+  
+          <!-- Content Row -->
+          <div class="row">
+            <div class="col-12">
+
+              <router-outlet></router-outlet>
+  
+            </div>
+          </div>
+  
+        </div>
+        <!-- /.container-fluid -->
+  
+      </div>
+      <!-- End of Main Content -->
+  
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; ....</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+  
+    </div>
+    <!-- End of Content Wrapper -->
+  
+  </div>
+  <!-- End of Page Wrapper -->
+  
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+  
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" style="color: white;" data-dismiss="modal" (click)="goHome()">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

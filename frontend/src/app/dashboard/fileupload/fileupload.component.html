@@ -1,0 +1,23 @@
+<div class="center">
+
+    <h3>Upload zipped files</h3>
+
+    {{successMsg}}
+
+    <div class="text-center">
+
+        <div class="form-group">
+            <input type="file" id="file" (change)="handleFileInput($event.target.files)">
+        </div>
+
+        <div *ngIf="!loading" >
+            <button type="button" class="btn btn-success" (click)="uploadFileToActivity()" mat-raised-button
+            btn-size="400px">Upload</button>
+    </div>
+
+          
+        <div *ngIf="loading" class="spinner-border">
+            </div>
+        </div>
+
+   
