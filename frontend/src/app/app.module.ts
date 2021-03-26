@@ -13,6 +13,7 @@ import { LandingComponent } from './landing/landing.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { AdvancedComponent } from './dashboard/advanced/advanced.component';
 // import { FileviewComponent } from './dashboard/fileview/fileview.component'
 
 @NgModule({
@@ -23,6 +24,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     LandingComponent,
     // FileuploadComponent,
     DashboardComponent,
+    AdvancedComponent,
     // FileviewComponent,
   
   ],
