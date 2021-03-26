@@ -9,11 +9,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { LandingComponent } from './landing/landing.component';
-import { FileuploadComponent } from './dashboard/fileupload/fileupload.component';
+// import { FileuploadComponent } from './dashboard/fileupload/fileupload.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { FileviewComponent } from './dashboard/fileview/fileview.component'
+// import { FileviewComponent } from './dashboard/fileview/fileview.component'
 
 @NgModule({
   declarations: [
@@ -21,9 +21,9 @@ import { FileviewComponent } from './dashboard/fileview/fileview.component'
     LoginComponent,
     SignupComponent,
     LandingComponent,
-    FileuploadComponent,
+    // FileuploadComponent,
     DashboardComponent,
-    FileviewComponent,
+    // FileviewComponent,
   
   ],
   imports: [
