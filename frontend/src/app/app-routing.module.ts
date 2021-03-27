@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdvancedComponent } from './dashboard/advanced/advanced.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FileViewComponent } from './dashboard/file-view/file-view.component';
 // import { FileuploadComponent } from './dashboard/fileupload/fileupload.component.html';
-// import { FileviewComponent } from './dashboard/fileview/fileview.component';
 import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
@@ -19,11 +19,10 @@ const routes: Routes = [
       // path:"fileupload",
       // component:FileuploadComponent
       // },
-
-      // {
-      // path:"fileview",
-      // component: FileviewComponent
-      // },
+      {
+        path: 'fileview',
+        component: FileViewComponent
+      },
       {
         path: 'advanced',
         component: AdvancedComponent

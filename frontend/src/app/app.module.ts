@@ -14,7 +14,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AdvancedComponent } from './dashboard/advanced/advanced.component';
-// import { FileviewComponent } from './dashboard/fileview/fileview.component'
+import { FileViewComponent } from './dashboard/file-view/file-view.component';
+
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -25,15 +27,15 @@ import { AdvancedComponent } from './dashboard/advanced/advanced.component';
     // FileuploadComponent,
     DashboardComponent,
     AdvancedComponent,
-    // FileviewComponent,
-  
+    FileViewComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule   
+    ReactiveFormsModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
