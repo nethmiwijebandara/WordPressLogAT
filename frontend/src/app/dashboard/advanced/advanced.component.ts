@@ -33,8 +33,22 @@ export class AdvancedComponent implements OnInit {
         ]
       },
       options: {
+        maintainAspectRatio: false,
         legend: {
           display: false
+        },
+        scales: {
+          yAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: 'No. of Vacancies'
+            }
+          }],
+          xAxes: [{
+            gridLines: {
+              display: false
+            }
+          }]
         }
       }
     });
@@ -42,7 +56,7 @@ export class AdvancedComponent implements OnInit {
 
   showPie(): void {
     this.pieChart = new Chart('pieChart', {
-      type: 'doughnut',
+      type: 'doughnut', //Use 'pie' for a pie chart
       data: {
         labels: ['Designer', 'Developer', 'Executive', 'Manager'],
         datasets: [{
@@ -50,6 +64,9 @@ export class AdvancedComponent implements OnInit {
           data: [30, 10, 8, 20],
           backgroundColor: ['#F1C40F', '#2980B9', '#8E44AD', '#E74C3C']
         }]
+      },
+      options: {
+        maintainAspectRatio: false,
       }
     });
   }
@@ -82,8 +99,17 @@ export class AdvancedComponent implements OnInit {
         }]
       },
       options: {
+        maintainAspectRatio: false,
         legend: {
           display: false
+        },
+        scales: {
+          yAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: 'No. of Users'
+            }
+          }]
         }
       }
     });
