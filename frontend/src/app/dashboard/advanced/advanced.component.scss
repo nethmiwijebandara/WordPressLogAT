@@ -1,12 +1,12 @@
 .card-header {
-    background-color: transparent;
-    border-bottom: none;
-    
+  background-color: transparent;
+  border-bottom: none;
 }
 
 .card-title {
-    color: #252422;
-    font-weight: 300;
+  color: #252422;
+  font-weight: 300;
+  font-size: medium;
 }
 
 // .testborder {
@@ -14,11 +14,15 @@
 // }
 
 @media only screen and (min-width: 768px) {
-    .row {
-        height: 50vh; //use 40vh for no scroll, but it's not looking good!
-    }
+  .row {
+    height: 50vh; //use 40vh for no scroll, but it's not looking good!
+  }
 }
 
 .card-body {
-    padding-top: 0px;
+  padding-top: 0px;
+}
+
+agm-map {
+  height: 100%;
 }

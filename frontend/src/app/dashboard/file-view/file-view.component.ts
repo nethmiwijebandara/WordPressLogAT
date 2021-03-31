@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { PageEvent } from '@angular/material/paginator';
 import { FileViewService } from '../../services/file-view.service';
+import { DetailDialogComponent } from './detail-dialog/detail-dialog.component';
 
 @Component({
   selector: 'app-file-view',
@@ -12,16 +14,19 @@ export class FileViewComponent implements OnInit {
   itemList = [];
   pagedList = [];
 
-  constructor(private fileViewService: FileViewService) { }
+  constructor(
+    private fileViewService: FileViewService,
+    private dialog: MatDialog,
+  ) { }
 
   ngOnInit(): void {
     this.getFileview();
   }
 
   getFileview() {
-    this.fileViewService.getFileView().subscribe( res => {
+    this.fileViewService.getFileView().subscribe(res => {
       this.itemList = res.body.results;
-      this.pagedList = this.itemList.slice(0,9);
+      this.pagedList = this.itemList.slice(0, 9);
       console.log(this.itemList);
     }, err => {
       console.log(err);
@@ -39,5 +44,13 @@ export class FileViewComponent implements OnInit {
       endIndex = this.itemList.length;
     }
     this.pagedList = this.itemList.slice(startIndex, endIndex);
+  }
+
+  viewMore(item) {
+    this.dialog.open(DetailDialogComponent, { data: item });
+  }
+
+  delete() {
+    console.log('Delete works');
   }
 }

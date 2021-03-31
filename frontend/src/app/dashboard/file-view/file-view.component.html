@@ -18,9 +18,15 @@
                 <p class="mb-0 mt-4 company">{{item.company.name}}</p>
                 <p class="mb-0 company">{{item.department}} Department</p>
                 <p class="mb-0 location">{{item.location}}</p>
+                <div class="row btnsubmit mt-3">
+                    <div class="col-md-6 col-6"> <button type="button" class="btn btn-primary btn-lg"
+                            (click)="viewMore(item)"><span>View More</span></button> </div>
+                    <div class="col-md-6 col-6"> <button type="button" class="btn btn-danger btn-lg"
+                            (click)="delete()"><span>Delete</span></button> </div>
+                </div>
             </div>
         </div>
-       
+
     </div>
     <div class="row">
         <div class="col-12 d-flex justify-content-center mb-3">
@@ -29,5 +35,5 @@
             </mat-paginator>
         </div>
     </div>
-    
+
 </div>

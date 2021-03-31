@@ -1,24 +1,18 @@
 .company {
-    color:  #e74a3b;
-    font-weight: 500;
+  color: #e74a3b;
+  font-weight: 500;
 }
 
 .location {
-    color:  #4e73df;
+  color: #4e73df;
 }
 
 .description {
-  //   white-space: nowrap;
-  //   overflow: hidden;
-  //   text-overflow: ellipsis;
-  //   max-width: 50ch;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-//   line-height: 1.5em;
-//   max-height: 3em;
 }
 
 .logo img {
@@ -29,11 +23,9 @@
 
 .card {
   display: block;
-  padding: 3vh 2vh 2vh 5vh;
+  padding: 3vh 2vh 3vh 5vh;
   border: none;
   border-radius: 15px;
-//   margin-top: 5%;
-//   margin-bottom: 5%;
   max-width: 500px;
 }
 
@@ -44,18 +36,14 @@
   margin-left: auto;
 }
 
-.far {
-  color: rgba(15, 198, 239, 0.97) !important;
-  font-size: 16px !important;
-}
-
 p.heading {
   font-weight: bold;
   font-size: 25px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  margin: 0px;
+  line-height: normal;
+  margin-bottom: 0px;
 }
 
 p.text-muted {
@@ -68,16 +56,6 @@ p.text-muted {
   border-radius: 8px;
 }
 
-.fas.fa-users {
-  color: rgba(15, 198, 239, 0.97) !important;
-}
-
-.mutual span {
-  font-size: 14px;
-  color: #adb5bd;
-  font-weight: bold;
-}
-
 .btn-primary.btn-lg {
   border-radius: 30px;
   width: 90%;
@@ -85,17 +63,15 @@ p.text-muted {
   background: #8c02e3;
 }
 
-.btn-dark.btn-lg {
+.btn-danger.btn-lg {
   border-radius: 30px;
   width: 90%;
   border: none;
-  background: #dee2e6;
 }
 
-.btn-dark span {
+.btn-danger span {
   font-size: 14px;
   text-align: center;
-  color: #0000008c;
   font-weight: bold;
 }
 

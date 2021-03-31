@@ -12,12 +12,19 @@ export class AdvancedComponent implements OnInit {
   pieChart: any;
   lineChart: any;
 
+  lat = 6.9271; //longitude n latitude for colombo
+  lng = 79.8612;
+
   constructor() { }
 
   ngOnInit(): void {
     this.showBar();
     this.showPie();
     this.showLine();
+  }
+
+  clickLoc(event) {
+    console.log(event);
   }
 
   showBar(): void {

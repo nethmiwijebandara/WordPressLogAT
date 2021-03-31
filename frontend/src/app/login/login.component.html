@@ -2,7 +2,8 @@
     <div class="text-center">
 
       <form  [formGroup]="form" #f="ngForm" (ngSubmit)="signIn(f.value)">
-        <h2 class="form-signin-heading">Please sign in</h2>
+        <div class="container pr-5 pl-5">
+          <h2 class="form-signin-heading">Please sign in</h2>
     <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username and/or password.</div>
     <label
          for="inputEmail" class="sr-only">Email address</label>
@@ -19,7 +20,7 @@
                  Enter the E-mail
                </div>
       <br>
-    <label for="inputPassword">Password</label>
+    <!-- <label for="inputPassword">Password</label> -->
       <input
       formControlName="password"
          type="password"
@@ -34,6 +35,8 @@
       <br>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 
+        </div>
+        
   </form>
   <p class="mt-5 mb-3 text-muted">&copy; 2020-2021</p>
   <p class="mt-1 mb-2 text-muted">Do not have an account? </p>

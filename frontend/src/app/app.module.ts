@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
@@ -17,6 +18,9 @@ import { AdvancedComponent } from './dashboard/advanced/advanced.component';
 import { FileViewComponent } from './dashboard/file-view/file-view.component';
 
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DetailDialogComponent } from './dashboard/file-view/detail-dialog/detail-dialog.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -28,14 +32,22 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     DashboardComponent,
     AdvancedComponent,
     FileViewComponent,
+    DetailDialogComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule,
+    MatButtonModule,
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyBw_DYfqLoJSakJXhl6HoH9e0JrNQARA0Y'})
+  ],
+  entryComponents: [
+    DetailDialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
