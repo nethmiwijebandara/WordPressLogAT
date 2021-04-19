@@ -231,3 +231,16 @@ func ProfileHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 }
+
+func ReadFile(filepath string) string{
+
+	text, err := ioutil.ReadFile(filepath)
+
+	if err != nil {
+		fmt.Println("File reading error", err)
+		return nil;
+	}
+
+	return string(text)
+}
+
