@@ -1,10 +1,13 @@
 package db
 
 import (
+	"backend/model"
 	"context"
+	"fmt"
 	"log"
 	"time"
 
+	"../model"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/mongo/readpref"
@@ -53,3 +56,31 @@ func checkError(err error) {
 		panic(err)
 	}
 }
+
+func CreateAccessLog(accessLog model.AccessLog) {
+
+	client, err := mongo.NewClient(options.Client().ApplyURI("mongodb+srv://neth98:neth123@test.dq1l7.mongodb.net/FilesDB?retryWrites=true&w=majority"))
+
+	checkError(err)
+
+	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
+
+	err = client.Connect(ctx)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	defer client.Disconnect(ctx)
+
+	accesslogCollection := client.Database("Logs").Collection("actionlogs")
+
+	result, insertErr := accesslogCollection.InsertOne(ctx, accessLog)
+
+	if insertErr != nil {
+		log.Fatal(insertErr)
+	}
+	newID := result.InsertedID
+
+	fmt.Print("Inserted ID ", newID)
+}
+
