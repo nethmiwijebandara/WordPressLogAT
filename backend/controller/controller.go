@@ -254,7 +254,14 @@ func LogHandler(logtype string, filepath string){
 			dateTime := words[3]
 			request := words[4]
 
-			//need to insert these data into db
+			accessLog := model.AccessLog{
+				IPAddress : ipAddress,
+				DateTime : dateTime,
+				Request : request,
+			}
+
+			db.CreateAccessLog(accessLog);
+			
 		}
 
 	}else if logtype == "error" {
@@ -267,7 +274,22 @@ func LogHandler(logtype string, filepath string){
 			warningType := words[1]
 			pid := words[2]
 
-			//need to insert these data into db
+			var elog string = ""
+
+			for i := 3; i < len(words); i++ {
+				elog = elog +  words[i];
+			}
+
+			errlog := elog
+
+			errorLog := model.ErrorLog{
+				DateTime : dateTime,
+				WarningType : warningType,
+				PID         : pid,
+				Error       : errlog,
+			}
+
+			db.CreateErrorLog(errorlog);
 
 		}
 
