@@ -232,15 +232,64 @@ func ProfileHandler(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func ReadFile(filepath string) string{
 
-	text, err := ioutil.ReadFile(filepath)
+//call this function to retrive document text data into db
+func LogHandler(logtype string, filepath string){
 
-	if err != nil {
-		fmt.Println("File reading error", err)
-		return nil;
+	//logtypes are "access" and "error"
+	//filepath is txt document path
+
+	fileText, err := readLines()
+	if err != nil{
+		return nil, err
 	}
 
-	return string(text)
+	if logtype == "access" {
+
+		for i := 0; i < len(fileText).; i++ {
+
+			words := strings.Fields(fileText[i])
+
+			ipAddress := words[0]
+			dateTime := words[3]
+			request := words[4]
+
+			//need to insert these data into db
+		}
+
+	}else if logtype == "error" {
+
+		for i := 0; i < len(fileText).; i++ {
+		
+			words := strings.Fields(fileText[i])
+
+			dateTime := words[0]
+			warningType := words[1]
+			pid := words[2]
+
+			//need to insert these data into db
+
+		}
+
+	}
+
 }
+
+//reading text file and adding it to the array, line by line
+func readLines(filepath string) ([]string, error) {
+    file, err := os.Open(path)
+    if err != nil {
+        return nil, err
+    }
+    defer file.Close()
+
+    var lines []string
+    scanner := bufio.NewScanner(file)
+    for scanner.Scan() {
+        lines = append(lines, scanner.Text())
+    }
+    return lines, scanner.Err()
+}
+
+
 
