@@ -23,3 +23,16 @@ type Register struct {
 	Message string `json:"message"`
 	Token   string `json:"token"`
 }
+
+type AccessLog struct {
+	IPAddress string `json:"message"`
+	DateTime  string `json:"datetime"`
+	Request   string `json:"request"`
+}
+
+type ErrorLog struct {
+	DateTime    string `json:"datetime"`
+	WarningType string `json:"warningtype"`
+	PID         string `json:"pid"`
+	Error       string `json:"error"`
+}
